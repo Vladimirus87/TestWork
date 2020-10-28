@@ -2,8 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -50,14 +52,31 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fl-yI-q6M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gVm-iN-SAE">
+                                <rect key="frame" x="150" y="58" width="20" height="20"/>
+                                <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gVm-iN-SAE" firstAttribute="centerX" secondItem="3fl-yI-q6M" secondAttribute="centerX" id="Xqm-Jd-Pol"/>
+                            <constraint firstItem="gVm-iN-SAE" firstAttribute="centerY" secondItem="3fl-yI-q6M" secondAttribute="centerY" id="itR-BU-uwx"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="7xL-lZ-rHu" secondAttribute="trailing" constant="16" id="2ck-pv-YdS"/>
                     <constraint firstItem="TVd-kd-o9O" firstAttribute="top" secondItem="Tie-sG-e9B" secondAttribute="bottom" constant="8" id="9TY-2v-qaD"/>
+                    <constraint firstItem="3fl-yI-q6M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EpT-5o-yX9"/>
                     <constraint firstItem="DKm-u1-2EM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TVd-kd-o9O" secondAttribute="bottom" constant="8" id="KKO-Rx-m5B"/>
                     <constraint firstItem="41M-Zk-22J" firstAttribute="firstBaseline" secondItem="Tie-sG-e9B" secondAttribute="firstBaseline" id="Nje-ew-wHf"/>
                     <constraint firstItem="DKm-u1-2EM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7xL-lZ-rHu" secondAttribute="bottom" constant="8" id="O0V-7M-9DQ"/>
+                    <constraint firstAttribute="bottom" secondItem="3fl-yI-q6M" secondAttribute="bottom" id="OOI-Tb-gpR"/>
                     <constraint firstItem="Tie-sG-e9B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Tai-BP-tph"/>
+                    <constraint firstAttribute="trailing" secondItem="3fl-yI-q6M" secondAttribute="trailing" id="TxZ-tp-gdi"/>
                     <constraint firstItem="7xL-lZ-rHu" firstAttribute="top" secondItem="TVd-kd-o9O" secondAttribute="top" id="VtZ-yp-bfQ"/>
                     <constraint firstAttribute="trailing" secondItem="41M-Zk-22J" secondAttribute="trailing" constant="16" id="auM-tO-QhA"/>
                     <constraint firstItem="TVd-kd-o9O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bTo-88-PZ8"/>
@@ -65,14 +84,17 @@
                     <constraint firstAttribute="trailing" secondItem="DKm-u1-2EM" secondAttribute="trailing" constant="16" id="ch6-Cp-j3W"/>
                     <constraint firstAttribute="bottom" secondItem="DKm-u1-2EM" secondAttribute="bottom" constant="8" id="iam-kR-XXC"/>
                     <constraint firstItem="DKm-u1-2EM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="pZr-rW-Chu"/>
+                    <constraint firstItem="3fl-yI-q6M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vDQ-ok-Z4E"/>
                     <constraint firstItem="7xL-lZ-rHu" firstAttribute="leading" secondItem="TVd-kd-o9O" secondAttribute="trailing" constant="8" id="z4N-xh-09d"/>
                     <constraint firstItem="41M-Zk-22J" firstAttribute="leading" secondItem="Tie-sG-e9B" secondAttribute="trailing" constant="8" id="zaF-pP-Maf"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="activity" destination="gVm-iN-SAE" id="Tar-qO-Umv"/>
                 <outlet property="authorName" destination="Tie-sG-e9B" id="yjm-Z8-YLG"/>
                 <outlet property="entryDate" destination="41M-Zk-22J" id="ZCO-N7-ZYZ"/>
+                <outlet property="loadingBackView" destination="3fl-yI-q6M" id="6Y4-x1-uEo"/>
                 <outlet property="numberOfComments" destination="DKm-u1-2EM" id="FP4-mx-hTr"/>
                 <outlet property="thumbnail" destination="TVd-kd-o9O" id="4Ld-FI-15o"/>
                 <outlet property="titleInfo" destination="7xL-lZ-rHu" id="y7G-yD-bwu"/>
@@ -80,4 +102,9 @@
             <point key="canvasLocation" x="-171.01449275362319" y="20.089285714285712"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

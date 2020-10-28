@@ -9,25 +9,37 @@
 /* Begin PBXBuildFile section */
 		B13CE74625494985008217A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CE74525494985008217A6 /* AppDelegate.swift */; };
 		B13CE74825494985008217A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CE74725494985008217A6 /* SceneDelegate.swift */; };
-		B13CE74A25494985008217A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CE74925494985008217A6 /* ViewController.swift */; };
 		B13CE74D25494985008217A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13CE74B25494985008217A6 /* Main.storyboard */; };
 		B13CE74F25494986008217A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B13CE74E25494986008217A6 /* Assets.xcassets */; };
 		B13CE75225494986008217A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13CE75025494986008217A6 /* LaunchScreen.storyboard */; };
 		B13CE75D254949E5008217A6 /* RedditListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CE75B254949E5008217A6 /* RedditListCell.swift */; };
 		B13CE75E254949E5008217A6 /* RedditListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13CE75C254949E5008217A6 /* RedditListCell.xib */; };
+		B13CE7622549579C008217A6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CE7612549579C008217A6 /* ListViewController.swift */; };
+		B13CE765254958EC008217A6 /* ListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CE764254958EC008217A6 /* ListViewController+DataSource.swift */; };
+		B13CE7682549598F008217A6 /* ListViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CE7672549598F008217A6 /* ListViewController+Delegate.swift */; };
+		B13CE774254962C1008217A6 /* RedditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CE773254962C1008217A6 /* RedditModel.swift */; };
+		B13CE778254968B8008217A6 /* RedditClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CE777254968B8008217A6 /* RedditClient.swift */; };
+		B13CE77F254971C1008217A6 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CE77E254971C1008217A6 /* Date+Extensions.swift */; };
+		B13CE78D254980EE008217A6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CE78C254980EE008217A6 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B13CE74225494985008217A6 /* TestWorkRaketa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWorkRaketa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13CE74525494985008217A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B13CE74725494985008217A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B13CE74925494985008217A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B13CE74C25494985008217A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B13CE74E25494986008217A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B13CE75125494986008217A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B13CE75325494986008217A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B13CE75B254949E5008217A6 /* RedditListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditListCell.swift; sourceTree = "<group>"; };
 		B13CE75C254949E5008217A6 /* RedditListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedditListCell.xib; sourceTree = "<group>"; };
+		B13CE7612549579C008217A6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		B13CE764254958EC008217A6 /* ListViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+DataSource.swift"; sourceTree = "<group>"; };
+		B13CE7672549598F008217A6 /* ListViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+Delegate.swift"; sourceTree = "<group>"; };
+		B13CE773254962C1008217A6 /* RedditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditModel.swift; sourceTree = "<group>"; };
+		B13CE777254968B8008217A6 /* RedditClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditClient.swift; sourceTree = "<group>"; };
+		B13CE77E254971C1008217A6 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		B13CE78C254980EE008217A6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +72,15 @@
 		B13CE74425494985008217A6 /* TestWorkRaketa */ = {
 			isa = PBXGroup;
 			children = (
-				B13CE75A254949AE008217A6 /* View */,
 				B13CE74525494985008217A6 /* AppDelegate.swift */,
 				B13CE74725494985008217A6 /* SceneDelegate.swift */,
-				B13CE74925494985008217A6 /* ViewController.swift */,
-				B13CE74B25494985008217A6 /* Main.storyboard */,
-				B13CE74E25494986008217A6 /* Assets.xcassets */,
-				B13CE75025494986008217A6 /* LaunchScreen.storyboard */,
-				B13CE75325494986008217A6 /* Info.plist */,
+				B13CE76B25495B1B008217A6 /* Storyboards */,
+				B13CE7762549688D008217A6 /* Network */,
+				B13CE7722549625C008217A6 /* Model */,
+				B13CE75A254949AE008217A6 /* View */,
+				B13CE77D25497053008217A6 /* Extensions */,
+				B13CE76C25495B2F008217A6 /* SupportingFiles */,
+				B13CE76E25495B6A008217A6 /* Controllers */,
 			);
 			path = TestWorkRaketa;
 			sourceTree = "<group>";
@@ -79,6 +92,67 @@
 				B13CE75C254949E5008217A6 /* RedditListCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B13CE76B25495B1B008217A6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B13CE74B25494985008217A6 /* Main.storyboard */,
+				B13CE75025494986008217A6 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B13CE76C25495B2F008217A6 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B13CE74E25494986008217A6 /* Assets.xcassets */,
+				B13CE75325494986008217A6 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B13CE76E25495B6A008217A6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B13CE7702549612C008217A6 /* ListViewController */,
+				B13CE78C254980EE008217A6 /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B13CE7702549612C008217A6 /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B13CE7612549579C008217A6 /* ListViewController.swift */,
+				B13CE764254958EC008217A6 /* ListViewController+DataSource.swift */,
+				B13CE7672549598F008217A6 /* ListViewController+Delegate.swift */,
+			);
+			path = ListViewController;
+			sourceTree = "<group>";
+		};
+		B13CE7722549625C008217A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B13CE773254962C1008217A6 /* RedditModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B13CE7762549688D008217A6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B13CE777254968B8008217A6 /* RedditClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B13CE77D25497053008217A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B13CE77E254971C1008217A6 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,9 +226,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B13CE74A25494985008217A6 /* ViewController.swift in Sources */,
+				B13CE778254968B8008217A6 /* RedditClient.swift in Sources */,
+				B13CE7682549598F008217A6 /* ListViewController+Delegate.swift in Sources */,
+				B13CE77F254971C1008217A6 /* Date+Extensions.swift in Sources */,
+				B13CE765254958EC008217A6 /* ListViewController+DataSource.swift in Sources */,
 				B13CE74625494985008217A6 /* AppDelegate.swift in Sources */,
 				B13CE74825494985008217A6 /* SceneDelegate.swift in Sources */,
+				B13CE774254962C1008217A6 /* RedditModel.swift in Sources */,
+				B13CE78D254980EE008217A6 /* DetailViewController.swift in Sources */,
+				B13CE7622549579C008217A6 /* ListViewController.swift in Sources */,
 				B13CE75D254949E5008217A6 /* RedditListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -287,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -304,7 +384,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26J8V8955L;
-				INFOPLIST_FILE = TestWorkRaketa/Info.plist;
+				INFOPLIST_FILE = TestWorkRaketa/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,7 +403,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26J8V8955L;
-				INFOPLIST_FILE = TestWorkRaketa/Info.plist;
+				INFOPLIST_FILE = TestWorkRaketa/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

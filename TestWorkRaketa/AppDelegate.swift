@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//https://github.com/Vladimirus87/Raketa
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

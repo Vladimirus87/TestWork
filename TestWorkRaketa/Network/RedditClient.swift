@@ -6,18 +6,17 @@
 //
 import UIKit
 
-// Нужно поработать над обработкой ошибок в данном запросе
-
-enum APIRoute {
-    static let topListingUrl = "https://www.reddit.com/top.json?limit=15"
+enum RedditClientError: Error {
+    case parsingError
+    case noConnection(string: String?)
 }
 
 class RedditClient {
     static let shared = RedditClient()
     
-    func getTopData(afterID: String?, completion: @escaping ([ChildData], Error?) -> Void)  {
+    func getTopData(afterID: String?, completion: @escaping ([ChildData], RedditClientError?) -> Void)  {
         
-        var urlString: String = APIRoute.topListingUrl
+        var urlString: String = APIUrls.topUrl
         
         if let _afterID = afterID {
             urlString.append("&after="+_afterID)
@@ -27,7 +26,8 @@ class RedditClient {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
-                print(error!.localizedDescription)
+                completion([], .noConnection(string: error?.localizedDescription))
+                return
             }
             
             guard let data = data else { return }
@@ -40,7 +40,7 @@ class RedditClient {
                 completion(topEntries, nil)
                 
             } catch let jsonError {
-                completion([], jsonError)
+                completion([], .parsingError)
                 print(jsonError)
             }
             

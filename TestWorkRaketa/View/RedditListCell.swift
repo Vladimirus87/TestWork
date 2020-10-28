@@ -18,8 +18,6 @@ class RedditListCell: UITableViewCell {
     @IBOutlet weak var titleInfo: UILabel!
     @IBOutlet weak var numberOfComments: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
-    @IBOutlet weak var loadingBackView: UIView!
-    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     weak var delegate: RedditListCellDelegate?
 
@@ -53,22 +51,31 @@ class RedditListCell: UITableViewCell {
                 numberOfComments.text = ""
             }
             
-            stopLoadingAnimation()
-        } else {
-            startLoadingAnimation()
+            loadImage(urlString: data.thumbnailUrl)
         }
     }
     
-    private func startLoadingAnimation() {
-        activity.startAnimating()
-        loadingBackView.isHidden = false
+   
+    func loadImage(urlString: String?) {
+        self.thumbnail.image = nil
+        
+        guard let urlStr = urlString,
+            let url = URL(string: urlStr) else {return}
+        
+        DispatchQueue.global(qos: .utility).async {
+            ImageLoader.shared.loadImage(url: url, completion: { (img) in
+                DispatchQueue.main.async {
+                    if let image = img {
+                        self.thumbnail.image = image
+                    } else {
+                        self.thumbnail.image = #imageLiteral(resourceName: "image_not_available")
+                    }
+                }
+            })
+        }
     }
-    
-    private func stopLoadingAnimation() {
-        activity.stopAnimating()
-        loadingBackView.isHidden = true
-    }
-    
     
     
 }
+
+

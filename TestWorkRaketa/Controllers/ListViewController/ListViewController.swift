@@ -71,28 +71,29 @@ class ListViewController: UIViewController {
 
     ///Load listing data from Reddit Api
     func getData(lastID: String? = nil) {
-        RedditClient.shared.getTopData(afterID: lastID) { (data, error) in
-            
-            guard error == nil else {
+        DispatchQueue.global(qos: .userInteractive).async {
+            RedditClient.shared.getTopData(afterID: lastID) { (data, error) in
+                guard error == nil else {
+                    DispatchQueue.main.async {
+                        self.errorHandler(error!)
+                    }
+                    return
+                }
+                
                 DispatchQueue.main.async {
-                    self.errorHandler(error!)
+                    if lastID == nil {
+                        self.redditData = []
+                        self.isNotAllDataLoaded = true
+                    }
+                    
+                    self.redditData.append(contentsOf: data)
+                    self.isNotAllDataLoaded = !data.isEmpty
+                    
+                    self.tableViewData.reloadData()
                 }
-                return
-            }
-            
-            DispatchQueue.main.async {
-                if lastID == nil {
-                    self.redditData = []
-                    self.isNotAllDataLoaded = true
-                }
-                
-                self.redditData.append(contentsOf: data)
-                self.isNotAllDataLoaded = !data.isEmpty
-                
-                self.tableViewData.reloadData()
             }
         }
     }
-
+    
     
 }

@@ -21,6 +21,16 @@ class RedditListCell: UITableViewCell {
     
     weak var delegate: RedditListCellDelegate?
 
+    
+    // MARK: - Public API
+    var imageURL: URL? {
+        didSet {
+            thumbnail?.image = nil
+            loadImage()
+        }
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.addGestures()
@@ -39,39 +49,36 @@ class RedditListCell: UITableViewCell {
     
     func updateData(_ childData: ChildData?) {
         if let data = childData {
-            authorName.text = data.author
             let dateCreated = Date(timeIntervalSince1970: data.dateCreated)
             entryDate.text = dateCreated.getString()
-            
-            
             titleInfo.text = data.title
+            authorName.text = data.author
+            
             if data.numberOfComments > 0 {
                 numberOfComments.text = "Comments: \(data.numberOfComments)"
             } else {
                 numberOfComments.text = ""
             }
-            
-            loadImage(urlString: data.thumbnailUrl)
         }
     }
     
    
-    func loadImage(urlString: String?) {
-        self.thumbnail.image = nil
-        
-        guard let urlStr = urlString,
-            let url = URL(string: urlStr) else {return}
-        
-        DispatchQueue.global(qos: .utility).async {
-            ImageLoader.shared.loadImage(url: url, completion: { (img) in
-                DispatchQueue.main.async {
-                    if let image = img {
-                        self.thumbnail.image = image
-                    } else {
-                        self.thumbnail.image = #imageLiteral(resourceName: "image_not_available")
+    private func loadImage() {
+        if let url = imageURL {
+            DispatchQueue.global(qos: .utility).async {
+                ImageLoader.shared.loadImage(url: url, completion: { (img) in
+                    DispatchQueue.main.async {
+                        //take away raceCondition
+                        if url == self.imageURL {
+                            if let image = img {
+                                self.thumbnail.image = image
+                            } else {
+                                self.thumbnail.image = #imageLiteral(resourceName: "image_not_available")
+                            }
+                        }
                     }
-                }
-            })
+                })
+            }
         }
     }
     

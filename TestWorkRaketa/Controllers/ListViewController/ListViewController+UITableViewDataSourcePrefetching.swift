@@ -17,5 +17,9 @@ extension ListViewController: UITableViewDataSourcePrefetching {
         }
     }
     
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+       
+    }
+    
 }
 

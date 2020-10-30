@@ -22,6 +22,9 @@ extension ListViewController: UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: redditCellIdentifier, for: indexPath) as! RedditListCell
             cell.updateData(self.redditData[indexPath.row])
+            if let urlString = self.redditData[indexPath.row].thumbnailUrl {
+                cell.imageURL = URL(string: urlString)
+            }
             cell.delegate = self
             return cell
         }

@@ -32,6 +32,7 @@ class ImageLoader {
                     completion(nil)
                     return
                 }
+                
                 self?.imageCach.setObject(image, forKey: url.absoluteString as NSString)
                 completion(image)
             }

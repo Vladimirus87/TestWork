@@ -14,6 +14,8 @@ enum RedditClientError: Error {
 class RedditClient {
     static let shared = RedditClient()
     
+    var dataTasks : [URLSessionDataTask] = []
+    
     func getTopData(afterID: String?, completion: @escaping ([ChildData], RedditClientError?) -> Void)  {
         
         var urlString: String = APIUrls.topUrl
@@ -24,12 +26,12 @@ class RedditClient {
         
         guard let url = URL(string: urlString) else { return }
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 completion([], .noConnection(string: error?.localizedDescription))
                 return
             }
-            
+
             guard let data = data else { return }
             
             do {
@@ -44,6 +46,20 @@ class RedditClient {
                 print(jsonError)
             }
             
-            }.resume()
+        }
+        dataTask.resume()
+        dataTasks.append(dataTask)
+    }
+    
+    
+    func cancelDataTask(urlString: String) {
+        guard let dataTaskIndex = dataTasks.firstIndex(where: { task in
+            task.originalRequest?.url == URL(string: urlString)
+        }) else {
+            return
+        }
+        let dataTask =  dataTasks[dataTaskIndex]
+        dataTask.cancel()
+        dataTasks.remove(at: dataTaskIndex)
     }
 }
